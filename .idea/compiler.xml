@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <excludeFromCompile>
+      <directory url="file://$PROJECT_DIR$/rumi-parent/rumi-eureka/src/main/resources/archetype-resources" includeSubdirectories="true" />
+    </excludeFromCompile>
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="rumi-service-goods" />
+        <module name="rumi-eureka" />
+        <module name="rumi-service-goods-api" />
+        <module name="demo" />
+        <module name="rumi-common-db" />
+        <module name="rumi-common" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="8" />
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="demo" options="-parameters" />
+      <module name="rumi-common" options="-parameters" />
+      <module name="rumi-common-db" options="-parameters" />
+      <module name="rumi-eureka" options="-parameters" />
+      <module name="rumi-gateway" options="" />
+      <module name="rumi-parent" options="" />
+      <module name="rumi-service" options="" />
+      <module name="rumi-service-api" options="" />
+      <module name="rumi-service-goods" options="-parameters" />
+      <module name="rumi-service-goods-api" options="-parameters" />
+      <module name="rumi-web" options="" />
+    </option>
+  </component>
+</project>

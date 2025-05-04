@@ -1,0 +1,30 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.rumi</groupId>
+        <artifactId>rumi-parent</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <artifactId>rumi-common-db</artifactId>
+    <packaging>jar</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <description>需要访问数据库的包依赖汇总</description>
+    <!--依赖-->
+    <dependencies>
+        <!--对changgou-common的依赖-->
+        <dependency>
+            <groupId>com.rumi</groupId>
+            <artifactId>rumi-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <!--MySQL数据库驱动-->
+        <!--        mysql驱动-->
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>8.0.32</version>
+            <scope>runtime</scope>
+        </dependency>
+
+    </dependencies>
+</project>
