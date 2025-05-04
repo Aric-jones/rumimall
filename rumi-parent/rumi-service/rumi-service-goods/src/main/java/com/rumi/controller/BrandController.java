@@ -1,6 +1,7 @@
 package com.rumi.controller;
 
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.rumi.pojo.Brand;
 import com.rumi.service.IBrandService;
 import entity.Result;
@@ -12,9 +13,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * <p>
- * 品牌表 前端控制器
- * </p>
  *
  * @author CSH
  * @since 2025-05-04
@@ -107,12 +105,28 @@ public class BrandController {
      * @Author:CSH
      * @Updator:CSH
      * @Date 2025/5/4 21:21
-     * @Description: 分页查询
+     * @Description: 无条件分页查询
      */
     @GetMapping("/page/{page}/{size}")
-    public Result<List<Brand>> findPage(@PathVariable(name = "page") Integer page, @PathVariable(name = "size") Integer size){
-        List<Brand> list = brandService.findPage(page, size);
-        return new Result<>(true, StatusCode.OK, "查询成功", list);
+    public Result<IPage<Brand>> findPage(@PathVariable(name = "page") Integer page, @PathVariable(name = "size") Integer size){
+        IPage<Brand> list = brandService.findPage(page, size);
+        return new Result<IPage<Brand>>(true, StatusCode.OK, "查询成功", list);
+    }
+
+    /**
+     * @param brand
+     * @param page
+     * @param size
+     * @return entity.Result<java.util.List < com.rumi.pojo.Brand>>
+     * @Author:CSH
+     * @Updator:CSH
+     * @Date 2025/5/4 21:21
+     * @Description: 条件分页查询
+     */
+    @PostMapping("/page/{page}/{size}")
+    public Result<IPage<Brand>> findPage(@RequestBody Brand brand, @PathVariable(name = "page") Integer page, @PathVariable(name = "size") Integer size){
+        IPage<Brand> list = brandService.findPage(page, size, brand);
+        return new Result<IPage<Brand>>(true, StatusCode.OK, "查询成功", list);
     }
 
 

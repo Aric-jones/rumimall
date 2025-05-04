@@ -1,6 +1,7 @@
 package com.rumi.service;
 
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.rumi.pojo.Brand;
 
@@ -16,5 +17,27 @@ import java.util.List;
  */
 public interface IBrandService extends IService<Brand> {
 
-    List<Brand> findPage(Integer page, Integer size);
+    /**
+     * @param page
+     * @param size
+     * @return com.baomidou.mybatisplus.core.metadata.IPage<com.rumi.pojo.Brand>
+     * @Author:CSH
+     * @Updator:CSH
+     * @Date 2025/5/4 21:45
+     * @Description: 分页查询
+     */
+    IPage<Brand> findPage(Integer page, Integer size);
+
+    
+    /**
+     * @param page
+     * @param size
+     * @param brand
+     * @return com.baomidou.mybatisplus.core.metadata.IPage<com.rumi.pojo.Brand>
+     * @Author:CSH
+     * @Updator:CSH
+     * @Date 2025/5/4 21:45
+     * @Description: 条件分页查询
+     */
+    IPage<Brand> findPage(Integer page, Integer size,Brand brand);
 }
