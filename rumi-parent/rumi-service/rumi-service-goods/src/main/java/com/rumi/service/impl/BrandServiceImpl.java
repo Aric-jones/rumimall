@@ -7,6 +7,9 @@ import com.rumi.service.IBrandService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
+import java.util.List;
+
 /**
  * <p>
  * 品牌表 服务实现类
@@ -18,4 +21,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class BrandServiceImpl extends ServiceImpl<BrandMapper, Brand> implements IBrandService {
 
+    @Override
+    public List<Brand> findPage(Integer page, Integer size) {
+        return Collections.emptyList();
+    }
 }
