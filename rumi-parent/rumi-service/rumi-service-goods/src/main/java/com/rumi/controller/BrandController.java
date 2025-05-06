@@ -4,10 +4,9 @@ package com.rumi.controller;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.rumi.pojo.Brand;
 import com.rumi.service.IBrandService;
-import entity.Result;
-import entity.StatusCode;
+import com.rumi.common.entity.Result;
+import com.rumi.common.entity.StatusCode;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.Banner;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package entity;
+package com.rumi.common.entity;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Random;

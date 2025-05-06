@@ -1,4 +1,4 @@
-package entity;
+package com.rumi.common.entity;
 
 import java.lang.management.ManagementFactory;
 import java.net.InetAddress;

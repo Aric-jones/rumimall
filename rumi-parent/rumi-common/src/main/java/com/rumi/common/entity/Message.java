@@ -1,4 +1,4 @@
-package entity;
+package com.rumi.common.entity;
 
 import com.alibaba.fastjson.annotation.JSONField;
 

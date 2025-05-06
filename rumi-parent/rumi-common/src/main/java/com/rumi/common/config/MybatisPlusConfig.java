@@ -1,4 +1,4 @@
-package com.rumi.config;
+package com.rumi.common.config;
 
 import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;
