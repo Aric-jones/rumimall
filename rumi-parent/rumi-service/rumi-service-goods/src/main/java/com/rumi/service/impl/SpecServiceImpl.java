@@ -39,15 +39,12 @@ public class SpecServiceImpl extends ServiceImpl<SpecMapper, Spec> implements IS
      */
     @Override
     public IPage<Spec> findPage(Spec spec, int page, int size) {
-        LambdaQueryWrapper<Spec> wrapper = new LambdaQueryWrapper<Spec>()
-                .like(Objects.nonNull(spec.getName()), Spec::getName, spec.getName())
-                .eq(Objects.nonNull(spec.getTemplateId()), Spec::getTemplateId, spec.getTemplateId())
-                .eq(Objects.nonNull(spec.getSeq()), Spec::getSeq, spec.getSeq())
-                .eq(Objects.nonNull(spec.getId()), Spec::getId, spec.getId())
-                .eq(Objects.nonNull(spec.getOptions()), Spec::getOptions, spec.getOptions());
+        LambdaQueryWrapper<Spec> wrapper = getSpecLambdaQueryWrapper(spec);
         Page<Spec> specPage = new Page<>(page, size);
         return this.page(specPage, wrapper);
     }
+
+
 
     /**
      * @param page
@@ -74,12 +71,7 @@ public class SpecServiceImpl extends ServiceImpl<SpecMapper, Spec> implements IS
      */
     @Override
     public List<Spec> findList(Spec spec) {
-        LambdaQueryWrapper<Spec> wrapper = new LambdaQueryWrapper<Spec>()
-                .like(Objects.nonNull(spec.getName()), Spec::getName, spec.getName())
-                .eq(Objects.nonNull(spec.getTemplateId()), Spec::getTemplateId, spec.getTemplateId())
-                .eq(Objects.nonNull(spec.getSeq()), Spec::getSeq, spec.getSeq())
-                .eq(Objects.nonNull(spec.getId()), Spec::getId, spec.getId())
-                .eq(Objects.nonNull(spec.getOptions()), Spec::getOptions, spec.getOptions());
+        LambdaQueryWrapper<Spec> wrapper = getSpecLambdaQueryWrapper(spec);
         return this.list(wrapper);
     }
 
@@ -133,5 +125,23 @@ public class SpecServiceImpl extends ServiceImpl<SpecMapper, Spec> implements IS
         Template template = templateService.getById(spec.getTemplateId());
         template.setSpecNum(template.getSpecNum() + count);
         templateService.updateById(template);
+    }
+
+
+    /**
+     * @param spec
+     * @return com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper<com.rumi.pojo.Spec>
+     * @Author:CSH
+     * @Updator:CSH
+     * @Date 2025/5/6 22:53
+     * @Description: 构建查询条件
+     */
+    private static LambdaQueryWrapper<Spec> getSpecLambdaQueryWrapper(Spec spec) {
+        return new LambdaQueryWrapper<Spec>()
+                .like(Objects.nonNull(spec.getName()), Spec::getName, spec.getName())
+                .eq(Objects.nonNull(spec.getTemplateId()), Spec::getTemplateId, spec.getTemplateId())
+                .eq(Objects.nonNull(spec.getSeq()), Spec::getSeq, spec.getSeq())
+                .eq(Objects.nonNull(spec.getId()), Spec::getId, spec.getId())
+                .eq(Objects.nonNull(spec.getOptions()), Spec::getOptions, spec.getOptions());
     }
 }

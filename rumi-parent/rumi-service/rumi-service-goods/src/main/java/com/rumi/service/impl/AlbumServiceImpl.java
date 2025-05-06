@@ -34,10 +34,11 @@ public class AlbumServiceImpl extends ServiceImpl<AlbumMapper, Album> implements
      */
     @Override
     public IPage<Album> findPage(Album album, int page, int size) {
-        LambdaQueryWrapper<Album> wrapper = new LambdaQueryWrapper<Album>().like(Objects.nonNull(album.getTitle()), Album::getTitle, album.getTitle());
+        LambdaQueryWrapper<Album> wrapper = getAlbumLambdaQueryWrapper(album);
         Page<Album> albumPage = new Page<Album>(page, size);
         return this.page(albumPage, wrapper);
     }
+    
 
     /**
      * @param page
@@ -64,8 +65,25 @@ public class AlbumServiceImpl extends ServiceImpl<AlbumMapper, Album> implements
      */
     @Override
     public List<Album> findList(Album album) {
-        LambdaQueryWrapper<Album> wrapper = new LambdaQueryWrapper<Album>().like(Objects.nonNull(album.getTitle()), Album::getTitle, album.getTitle());
+        LambdaQueryWrapper<Album> wrapper = getAlbumLambdaQueryWrapper(album);
         return this.list(wrapper);
+    }
+
+
+    /**
+     * @param album
+     * @return com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper<com.rumi.pojo.Album>
+     * @Author:CSH
+     * @Updator:CSH
+     * @Date 2025/5/6 22:56
+     * @Description: 构建查询条件
+     */
+    private static LambdaQueryWrapper<Album> getAlbumLambdaQueryWrapper(Album album) {
+        return new LambdaQueryWrapper<Album>()
+                .like(Objects.nonNull(album.getTitle()), Album::getTitle, album.getTitle())
+                .eq(Objects.nonNull(album.getImage()), Album::getImage, album.getImage())
+                .eq(Objects.nonNull(album.getImageItems()), Album::getImageItems, album.getImageItems())
+                .eq(Objects.nonNull(album.getId()), Album::getId, album.getId());
     }
 
 }

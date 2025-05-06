@@ -97,13 +97,13 @@ public class SpecController {
      * @Description: 修改
      */
     @PutMapping(value = "/{id}")
-    public Result update(@RequestBody Spec spec, @PathVariable Integer id) {
+    public Result<String> update(@RequestBody Spec spec, @PathVariable Integer id) {
         spec.setId(id);
         boolean update = specService.updateById(spec);
         if (!update) {
-            return new Result(false, StatusCode.ERROR, "修改失败");
+            return new Result<String>(false, StatusCode.ERROR, "修改失败");
         }
-        return new Result(true, StatusCode.OK, "修改成功");
+        return new Result<String>(true, StatusCode.OK, "修改成功");
     }
 
 
@@ -116,9 +116,9 @@ public class SpecController {
      * @Description: 添加
      */
     @PostMapping
-    public Result add(@RequestBody Spec spec) {
+    public Result<String> add(@RequestBody Spec spec) {
         specService.add(spec);
-        return new Result(true, StatusCode.OK, "添加成功");
+        return new Result<String>(true, StatusCode.OK, "添加成功");
     }
 
 

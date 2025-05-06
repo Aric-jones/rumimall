@@ -45,9 +45,9 @@ public class BrandServiceImpl extends ServiceImpl<BrandMapper, Brand> implements
         Page<Brand> objectPage = new Page<>(page, size);
         LambdaQueryWrapper<Brand> wrapper = new LambdaQueryWrapper<Brand>()
                 .like(brand.getName() != null, Brand::getName, brand.getName())
-                .like(brand.getImage() != null, Brand::getImage, brand.getImage())
-                .like(brand.getLetter() != null, Brand::getLetter, brand.getLetter())
-                .like(brand.getSeq() != null, Brand::getSeq, brand.getSeq());
+                .eq(brand.getImage() != null, Brand::getImage, brand.getImage())
+                .eq(brand.getLetter() != null, Brand::getLetter, brand.getLetter())
+                .eq(brand.getSeq() != null, Brand::getSeq, brand.getSeq());
         return this.page(objectPage, wrapper);
     }
 }
