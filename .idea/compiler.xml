@@ -10,12 +10,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="rumi-common" />
         <module name="rumi-service-goods" />
+        <module name="rumi-service-file" />
         <module name="rumi-eureka" />
         <module name="rumi-service-goods-api" />
         <module name="demo" />
         <module name="rumi-common-db" />
-        <module name="rumi-common" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8" />
@@ -30,6 +31,7 @@
       <module name="rumi-parent" options="" />
       <module name="rumi-service" options="" />
       <module name="rumi-service-api" options="" />
+      <module name="rumi-service-file" options="-parameters" />
       <module name="rumi-service-goods" options="-parameters" />
       <module name="rumi-service-goods-api" options="-parameters" />
       <module name="rumi-web" options="" />

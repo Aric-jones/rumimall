@@ -11,13 +11,14 @@
     <description>rumi商城各大微服务的父工程</description>
     <modules>
         <module>rumi-service-goods</module>
+        <module>rumi-service-file</module>
     </modules>
     <!--依赖-->
     <dependencies>
         <dependency>
             <groupId>com.rumi</groupId>
             <artifactId>rumi-common-db</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
 </project>

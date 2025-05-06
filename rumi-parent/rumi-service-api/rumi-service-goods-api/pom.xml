@@ -4,7 +4,7 @@
     <parent>
         <groupId>com.rumi</groupId>
         <artifactId>rumi-service-api</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>0.0.1-SNAPSHOT</version>
     </parent>
     <artifactId>rumi-service-goods-api</artifactId>
 

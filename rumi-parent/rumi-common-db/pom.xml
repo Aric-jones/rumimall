@@ -7,7 +7,7 @@
     </parent>
     <artifactId>rumi-common-db</artifactId>
     <packaging>jar</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.0.1-SNAPSHOT</version>
     <description>需要访问数据库的包依赖汇总</description>
     <!--依赖-->
     <dependencies>
@@ -15,7 +15,7 @@
         <dependency>
             <groupId>com.rumi</groupId>
             <artifactId>rumi-common</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <!--MySQL数据库驱动-->
         <!--        mysql驱动-->
