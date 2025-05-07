@@ -127,6 +127,21 @@ public class BrandController {
         return new Result<IPage<Brand>>(true, StatusCode.OK, "查询成功", list);
     }
 
+    /**
+     * @param id
+     * @return com.rumi.common.entity.Result<java.util.List < com.rumi.pojo.Brand>>
+     * @Author:CSH
+     * @Updator:CSH
+     * @Date 2025/5/7 21:46
+     * @Description: 通过分类id查询排品牌信息
+     */
+    @GetMapping("/category/{id}")
+    public Result<List<Brand>> findBrandByCategory(@PathVariable(name="id") Integer id){
+        List<Brand> brandList = brandService.findByCategory(id);
+        return new Result<List<Brand>>(true,StatusCode.OK,"查询品牌列表成功",brandList);
+
+    }
+
 
 
 }

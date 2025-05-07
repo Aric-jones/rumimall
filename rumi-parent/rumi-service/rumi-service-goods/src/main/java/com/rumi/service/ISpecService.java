@@ -67,4 +67,14 @@ public interface ISpecService extends IService<Spec> {
      * @Description: 添加
      */
     void add(Spec spec);
+
+    /**
+     * @param id
+     * @return java.util.List<com.rumi.pojo.Spec>
+     * @Author:CSH
+     * @Updator:CSH
+     * @Date 2025/5/7 21:54
+     * @Description: 根据商品id查询对应的规格信息列表
+     */
+    List<Spec> findByCategoryId(Integer id);
 }

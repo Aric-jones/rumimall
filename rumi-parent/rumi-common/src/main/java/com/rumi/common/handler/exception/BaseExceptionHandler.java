@@ -1,4 +1,4 @@
-package com.rumi.common.exception;
+package com.rumi.common.handler.exception;
 
 import com.rumi.common.entity.Result;
 import com.rumi.common.entity.StatusCode;
@@ -16,9 +16,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class BaseExceptionHandler {
     @ExceptionHandler(value= Exception.class)
     @ResponseBody
-    public Result handlerException(Exception e){
+    public Result<String> handlerException(Exception e){
         e.printStackTrace();
-        return new Result(false, StatusCode.ERROR,e.getMessage());
+        return new Result<String>(false, StatusCode.ERROR,e.getMessage());
     }
 
 

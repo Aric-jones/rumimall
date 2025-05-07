@@ -69,4 +69,14 @@ public interface IParaService extends IService<Para> {
      * @Description: 添加
      */
     void add(Para para);
+
+    /**
+     * @param id
+     * @return java.util.List<com.rumi.pojo.Para>
+     * @Author:CSH
+     * @Updator:CSH
+     * @Date 2025/5/7 22:03
+     * @Description: 根据分类id查询对应参数列表
+     */
+    List<Para> findParaByCategoryId(Integer id);
 }

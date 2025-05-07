@@ -150,4 +150,19 @@ public class SpecController {
         List<Spec> list = specService.list();
         return new Result<List<Spec>>(true, StatusCode.OK, "查询成功", list);
     }
+
+
+    /**
+     * @param id
+     * @return com.rumi.common.entity.Result<java.util.List < com.rumi.pojo.Spec>>
+     * @Author:CSH
+     * @Updator:CSH
+     * @Date 2025/5/7 21:54
+     * @Description: 根据商品id查询对应的规格信息列表
+     */
+    @GetMapping("/category/{id}")
+    public Result<List<Spec>> findByCategoryId(@PathVariable(name="id") Integer id){
+        List<Spec> specList = specService.findByCategoryId(id);
+        return new Result<List<Spec>>(true,StatusCode.OK,"查询规格的列表成功",specList);
+    }
 }

@@ -40,4 +40,14 @@ public interface IBrandService extends IService<Brand> {
      * @Description: 条件分页查询
      */
     IPage<Brand> findPage(Integer page, Integer size,Brand brand);
+
+    /**
+     * @param id
+     * @return java.util.List<com.rumi.pojo.Brand>
+     * @Author:CSH
+     * @Updator:CSH
+     * @Date 2025/5/7 21:46
+     * @Description: 通过分类id查询排品牌信息
+     */
+    List<Brand> findByCategory(Integer id);
 }

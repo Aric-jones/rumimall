@@ -6,14 +6,17 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.rumi.dao.ParaMapper;
+import com.rumi.pojo.Category;
 import com.rumi.pojo.Para;
 import com.rumi.pojo.Template;
+import com.rumi.service.ICategoryService;
 import com.rumi.service.IParaService;
 import com.rumi.service.ITemplateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
@@ -26,6 +29,9 @@ public class ParaServiceImpl extends ServiceImpl<ParaMapper, Para> implements IP
 
     @Autowired
     private ITemplateService templateService;
+
+    @Autowired
+    private ICategoryService categoryService;
 
     /**
      * @param para
@@ -109,6 +115,22 @@ public class ParaServiceImpl extends ServiceImpl<ParaMapper, Para> implements IP
         if (!save) {
             throw new RuntimeException("添加失败");
         }
+    }
+
+    /**
+     * @param categoryId
+     * @return java.util.List<com.rumi.pojo.Para>
+     * @Author:CSH
+     * @Updator:CSH
+     * @Date 2025/5/7 22:03
+     * @Description: 根据分类id查询对应参数列表
+     */
+    @Override
+    public List<Para> findParaByCategoryId(Integer categoryId) {
+        // 获取模板id
+        Category category = categoryService.getById(categoryId);
+        // 根据模板id查询参数列表
+        return this.list(new LambdaQueryWrapper<Para>().eq(Para::getTemplateId, category.getTemplateId()));
     }
 
 

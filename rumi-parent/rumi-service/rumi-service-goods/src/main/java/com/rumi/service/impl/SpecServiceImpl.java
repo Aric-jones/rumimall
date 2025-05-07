@@ -6,14 +6,17 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.rumi.dao.SpecMapper;
+import com.rumi.pojo.Category;
 import com.rumi.pojo.Spec;
 import com.rumi.pojo.Template;
+import com.rumi.service.ICategoryService;
 import com.rumi.service.ISpecService;
 import com.rumi.service.ITemplateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
@@ -26,6 +29,9 @@ public class SpecServiceImpl extends ServiceImpl<SpecMapper, Spec> implements IS
 
     @Autowired
     private ITemplateService templateService;
+
+    @Autowired
+    private ICategoryService categoryService;
 
     /**
      * @param spec
@@ -109,6 +115,22 @@ public class SpecServiceImpl extends ServiceImpl<SpecMapper, Spec> implements IS
         if (!save) {
             throw new RuntimeException("添加失败");
         }
+    }
+
+    /**
+     * @param categoryId
+     * @return java.util.List<com.rumi.pojo.Spec>
+     * @Author:CSH
+     * @Updator:CSH
+     * @Date 2025/5/7 21:54
+     * @Description: 根据商品id查询对应的规格信息列表
+     */
+    @Override
+    public List<Spec> findByCategoryId(Integer categoryId) {
+        // 获取分类的模版id
+        Category category = categoryService.getById(categoryId);
+        // 根据模板id查询
+        return this.list(new LambdaQueryWrapper<Spec>().eq(Spec::getTemplateId, category.getTemplateId()));
     }
 
     /**

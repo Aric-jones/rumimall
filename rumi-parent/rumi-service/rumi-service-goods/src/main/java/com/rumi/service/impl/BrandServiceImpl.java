@@ -8,7 +8,11 @@ import com.rumi.dao.BrandMapper;
 import com.rumi.pojo.Brand;
 import com.rumi.service.IBrandService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.Collections;
+import java.util.List;
 
 
 /**
@@ -21,6 +25,9 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class BrandServiceImpl extends ServiceImpl<BrandMapper, Brand> implements IBrandService {
+
+    @Autowired
+    private BrandMapper brandMapper;
 
     @Override
     public IPage<Brand> findPage(Integer page, Integer size) {
@@ -49,5 +56,18 @@ public class BrandServiceImpl extends ServiceImpl<BrandMapper, Brand> implements
                 .eq(brand.getLetter() != null, Brand::getLetter, brand.getLetter())
                 .eq(brand.getSeq() != null, Brand::getSeq, brand.getSeq());
         return this.page(objectPage, wrapper);
+    }
+
+    /**
+     * @param id
+     * @return java.util.List<com.rumi.pojo.Brand>
+     * @Author:CSH
+     * @Updator:CSH
+     * @Date 2025/5/7 21:46
+     * @Description: 通过分类id查询排品牌信息
+     */
+    @Override
+    public List<Brand> findByCategory(Integer id) {
+        return brandMapper.findByCategory(id);
     }
 }

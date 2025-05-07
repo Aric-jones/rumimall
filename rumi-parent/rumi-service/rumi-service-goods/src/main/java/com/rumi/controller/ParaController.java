@@ -149,4 +149,19 @@ public class ParaController {
         List<Para> list = paraService.list();
         return new Result<List<Para>>(true, StatusCode.OK,"查询成功",list) ;
     }
+
+
+    /**
+     * @param id
+     * @return com.rumi.common.entity.Result<java.util.List < com.rumi.pojo.Para>>
+     * @Author:CSH
+     * @Updator:CSH
+     * @Date 2025/5/7 22:02
+     * @Description: 根据分类id查询对应参数列表
+     */
+    @GetMapping("/category/{id}")
+    public Result<List<Para>> findParaByCategoryId(@PathVariable(name = "id") Integer id) {
+        List<Para> paraList = paraService.findParaByCategoryId(id);
+        return new Result<List<Para>>(true, StatusCode.OK, "参数列表查询成功", paraList);
+    }
 }

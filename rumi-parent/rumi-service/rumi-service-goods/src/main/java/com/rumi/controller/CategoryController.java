@@ -157,7 +157,7 @@ public class CategoryController {
      * @Description: 根据父id查询
      */
     @RequestMapping(value ="/list/{pid}")
-    public Result<List<Category>> findByPrantId(@PathVariable(value = "pid")Integer pid){
+    public Result<List<Category>> findByParentId(@PathVariable(value = "pid")Integer pid){
         //根据父节点ID查询
         List<Category> list = categoryService.findByParentId(pid);
         return new Result<List<Category>>(true,StatusCode.OK,"查询成功",list);
