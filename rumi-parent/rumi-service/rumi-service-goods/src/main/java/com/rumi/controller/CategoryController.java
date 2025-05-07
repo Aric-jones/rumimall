@@ -126,7 +126,7 @@ public class CategoryController {
      * @Author:CSH
      * @Updator:CSH
      * @Date 2025/5/6 23:08
-     * @Description: 根据di查询
+     * @Description: 根据id查询
      */
     @GetMapping("/{id}")
     public Result<Category> findById(@PathVariable Integer id){
