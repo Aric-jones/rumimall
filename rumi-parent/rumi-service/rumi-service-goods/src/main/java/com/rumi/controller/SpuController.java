@@ -3,6 +3,7 @@ package com.rumi.controller;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.rumi.common.entity.Result;
 import com.rumi.common.entity.StatusCode;
+import com.rumi.pojo.Goods;
 import com.rumi.pojo.Spu;
 import com.rumi.service.ISpuService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,12 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * @Author:CSH
+ * @Updator:CSH
+ * @Date 2025/5/8 19:49
+ * @Description: spu控制层
+ */
 @RestController
 @RequestMapping("/spu")
 public class SpuController {
@@ -114,5 +121,93 @@ public class SpuController {
         spu.setIsEnableSpec(isEnableSpec);
         spuService.updateById(spu);
         return new Result<>(true, StatusCode.OK, "规格设置更新成功");
+    }
+
+
+    /**
+     * @param goods
+     * @return com.rumi.common.entity.Result
+     * @Author:CSH
+     * @Updator:CSH
+     * @Date 2025/5/7 22:38
+     * @Description: 新增商品信息（SPU+SKU）
+     */
+    @PostMapping("/save")
+    public Result<String> save(@RequestBody Goods goods){
+        spuService.saveByGoods(goods);
+        return new Result<String>(true,StatusCode.OK,"保存商品成功",null);
+    }
+
+    /**
+     * @param id
+     * @return com.rumi.common.entity.Result<com.rumi.pojo.Goods>
+     * @Author:CSH
+     * @Updator:CSH
+     * @Date 2025/5/7 23:00
+     * @Description: 根据id查询商品信息
+     */
+    @GetMapping("/goods/{id}")
+    public Result<Goods> findGoodsById(@PathVariable(value="id") Long id){
+        Goods goods = spuService.findGoodsById(id);
+        return new Result<Goods>(true,StatusCode.OK,"查询goods数据成功",goods);
+    }
+
+    /**
+     * @param id
+     * @return com.rumi.common.entity.Result
+     * @Author:CSH
+     * @Updator:CSH
+     * @Date 2025/5/8 21:15
+     * @Description: 商品审核
+     */
+    @PutMapping("/audit/{id}")
+    public Result<String> auditSpu(@PathVariable(name="id")Long id){
+        spuService.auditSpu(id);
+        return new Result<String>(true,StatusCode.OK,"审核通过");
+    }
+
+
+    /**
+     * @param id
+     * @return com.rumi.common.entity.Result
+     * @Author:CSH
+     * @Updator:CSH
+     * @Date 2025/5/8 21:21
+     * @Description: 商品下架
+     */
+    @PutMapping("/pull/{id}")
+    public Result<String> pullSpu(@PathVariable(name="id")Long id){
+        spuService.pullSpu(id);
+        return new Result<String>(true,StatusCode.OK,"下架成功");
+    }
+
+
+    /**
+     * @param id
+     * @return com.rumi.common.entity.Result<java.lang.String>
+     * @Author:CSH
+     * @Updator:CSH
+     * @Date 2025/5/8 21:25
+     * @Description: 商品上架
+     */
+    @PutMapping("/put/{id}")
+    public Result<String> putSpu(@PathVariable(name="id")Long id){
+        spuService.putSpu(id);
+        return new Result<String>(true,StatusCode.OK,"上架成功");
+    }
+
+
+    /**
+     * @param ids
+     * @return com.rumi.common.entity.Result
+     * @Author:CSH
+     * @Updator:CSH
+     * @Date 2025/5/8 21:30
+     * @Description: 商品批量上架
+     */
+    @PutMapping("/put/many")
+    public Result<String> putMany(@RequestBody Long[] ids){
+        spuService.putMany(ids);
+        return new Result<String>(true,StatusCode.OK,"上架商品成功");
     }
 }
