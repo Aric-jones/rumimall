@@ -4,8 +4,8 @@ spring:
   application:
     name: content
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://192.168.200.99:3306/changgou_content?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.200.99:3306/changgou_content?useSSL=false&serverTimezone=UTC
     username: root
     password: root@1
 eureka:

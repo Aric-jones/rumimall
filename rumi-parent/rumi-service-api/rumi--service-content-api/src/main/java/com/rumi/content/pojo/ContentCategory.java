@@ -1,4 +1,4 @@
-package com.rumi.contnet.pojo;
+package com.rumi.content.pojo;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;

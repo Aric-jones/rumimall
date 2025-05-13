@@ -1,8 +1,8 @@
-package com.rumi.contnet.feign;
+package com.rumi.content.feign;
 
 
 import com.rumi.common.entity.Result;
-import com.rumi.contnet.pojo.Content;
+import com.rumi.content.pojo.Content;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

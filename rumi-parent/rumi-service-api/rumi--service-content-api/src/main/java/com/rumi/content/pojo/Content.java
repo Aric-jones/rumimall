@@ -1,4 +1,4 @@
-package com.rumi.contnet.pojo;
+package com.rumi.content.pojo;
 
 
 import com.baomidou.mybatisplus.annotation.IdType;
@@ -9,7 +9,6 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
-import org.springframework.data.annotation.Id;
 
 import java.io.Serializable;
 
