@@ -210,4 +210,19 @@ public class SpuController {
         spuService.putMany(ids);
         return new Result<String>(true,StatusCode.OK,"上架商品成功");
     }
+
+
+    /**
+     * @param ids
+     * @return com.rumi.common.entity.Result<java.lang.String>
+     * @Author:CSH
+     * @Updator:CSH
+     * @Date 2025/5/8 21:50
+     * @Description: 批量下架
+     */
+    @PutMapping("/pull/many")
+    public Result<String> pullMany(@RequestBody Long[] ids){
+        spuService.pullMany(ids);
+        return new Result<String>(true,StatusCode.OK,"下架商品成功");
+    }
 }

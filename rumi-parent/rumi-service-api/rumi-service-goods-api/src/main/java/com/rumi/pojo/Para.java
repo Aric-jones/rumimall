@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
  * @Author:CSH
@@ -34,6 +35,23 @@ public class Para implements Serializable {
     private String options;
 
     private Integer seq;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Para para = (Para) o;
+        return Objects.equals(id, para.id) && Objects.equals(name, para.name) && Objects.equals(options, para.options) && Objects.equals(seq, para.seq) && Objects.equals(templateId, para.templateId);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, options, seq, templateId);
+    }
 
     private Integer templateId;
 

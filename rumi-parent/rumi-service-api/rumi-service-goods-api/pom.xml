@@ -8,5 +8,13 @@
     </parent>
     <artifactId>rumi-service-goods-api</artifactId>
 
+    <dependencies>
+    <dependency>
+        <groupId>com.rumi</groupId>
+        <artifactId>rumi-common</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </dependency>
+    </dependencies>
+
 
 </project>

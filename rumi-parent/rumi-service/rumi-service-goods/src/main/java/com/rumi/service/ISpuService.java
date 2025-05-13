@@ -83,4 +83,15 @@ public interface ISpuService extends IService<Spu> {
      * @Description: 批量上架
      */
     void putMany(Long[] ids);
+
+
+    /**
+     * @param ids
+     * @return void
+     * @Author:CSH
+     * @Updator:CSH
+     * @Date 2025/5/8 21:51
+     * @Description: 批量下架
+     */
+    void pullMany(Long[] ids);
 }

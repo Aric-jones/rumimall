@@ -12,6 +12,7 @@
     <description>所有微服务工程API抽取(javaBean|feign)</description>
     <modules>
         <module>rumi-service-goods-api</module>
+        <module>rumi--service-content-api</module>
     </modules>
     <dependencies>
         <!--通用的common-->

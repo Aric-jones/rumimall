@@ -7,7 +7,16 @@
         <option value="$PROJECT_DIR$/rumi-parent/pom.xml" />
         <option value="$PROJECT_DIR$/rumi-parent/rumi-gateway/pom.xml" />
         <option value="$PROJECT_DIR$/rumi-parent/demo/pom.xml" />
+        <option value="$PROJECT_DIR$/rumi-parent/rumi-service/rumi-service-canal/pom.xml" />
+        <option value="$PROJECT_DIR$/rumi-parent/rumi-service/rumi-service-goods/pom.xml" />
+        <option value="$PROJECT_DIR$/rumi-parent/rumi-service-api/rumi--service-content-api/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/rumi-parent/demo/pom.xml" />
+        <option value="$PROJECT_DIR$/rumi-parent/rumi-service/demo1/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8 (2)" project-jdk-type="JavaSDK">

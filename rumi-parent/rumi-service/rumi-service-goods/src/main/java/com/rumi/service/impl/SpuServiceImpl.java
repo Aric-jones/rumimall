@@ -200,6 +200,23 @@ public class SpuServiceImpl extends ServiceImpl<SpuMapper, Spu> implements ISpuS
     }
 
     /**
+     * @param ids
+     * @return void
+     * @Author:CSH
+     * @Updator:CSH
+     * @Date 2025/5/8 21:51
+     * @Description: 批量下架
+     */
+    @Override
+    public void pullMany(Long[] ids) {
+        List<Long> list = Arrays.asList(ids);
+        Spu spu = new Spu();
+        spu.setIsMarketable(SaleStatusEnum.NOT_OFF_SALE.getCode());
+        LambdaQueryWrapper<Spu> wrapper = new LambdaQueryWrapper<Spu>().in(Spu::getId, list).eq(Spu::getIsMarketable,  SaleStatusEnum.ON_SALE.getCode());
+        this.update(spu, wrapper);
+    }
+
+    /**
      * 构建查询条件
      */
     private LambdaQueryWrapper<Spu> buildQueryWrapper(Spu spu) {
