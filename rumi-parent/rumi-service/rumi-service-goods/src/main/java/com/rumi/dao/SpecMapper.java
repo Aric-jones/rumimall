@@ -2,10 +2,7 @@ package com.rumi.dao;
 
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.rumi.pojo.Spec;
-import org.apache.ibatis.annotations.Select;
-
-import java.util.List;
+import com.rumi.goods.pojo.Spec;
 
 /**
  * @author CSH

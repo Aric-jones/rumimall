@@ -4,7 +4,7 @@ package com.rumi.controller;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.rumi.common.entity.Result;
 import com.rumi.common.entity.StatusCode;
-import com.rumi.pojo.Album;
+import com.rumi.goods.pojo.Album;
 import com.rumi.service.IAlbumService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

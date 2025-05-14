@@ -2,7 +2,7 @@ package com.rumi.dao;
 
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.rumi.pojo.Brand;
+import com.rumi.goods.pojo.Brand;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 

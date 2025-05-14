@@ -14,6 +14,7 @@
         <module>rumi-service-canal</module>
         <module>rumi-service-goods</module>
         <module>rumi-service-content</module>
+        <module>rumi-service-search</module>
     </modules>
     <!--依赖-->
     <dependencies>

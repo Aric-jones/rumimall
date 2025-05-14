@@ -6,10 +6,11 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.rumi.dao.SkuMapper;
-import com.rumi.pojo.Sku;
+import com.rumi.goods.pojo.Sku;
 import com.rumi.service.ISkuService;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
@@ -32,6 +33,18 @@ public class SkuServiceImpl extends ServiceImpl<SkuMapper, Sku> implements ISkuS
     @Override
     public List<Sku> findList(Sku sku) {
         LambdaQueryWrapper<Sku> wrapper = buildQueryWrapper(sku);
+        return this.list(wrapper);
+    }
+
+    /**
+     * 根据状态查询
+     *
+     * @param status
+     */
+    @Override
+    public List<Sku> findByStatus(String status) {
+        LambdaQueryWrapper<Sku> wrapper = new LambdaQueryWrapper<Sku>()
+                .eq(Sku::getStatus, status);
         return this.list(wrapper);
     }
 

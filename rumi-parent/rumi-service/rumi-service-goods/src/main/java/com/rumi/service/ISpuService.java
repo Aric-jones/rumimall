@@ -2,8 +2,8 @@ package com.rumi.service;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.rumi.pojo.Goods;
-import com.rumi.pojo.Spu;
+import com.rumi.goods.pojo.Goods;
+import com.rumi.goods.pojo.Spu;
 
 import java.util.List;
 

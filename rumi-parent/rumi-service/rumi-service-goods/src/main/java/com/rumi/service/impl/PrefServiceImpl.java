@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.rumi.dao.PrefMapper;
-import com.rumi.pojo.Pref;
+import com.rumi.goods.pojo.Pref;
 import com.rumi.service.IPrefService;
 import org.springframework.stereotype.Service;
 

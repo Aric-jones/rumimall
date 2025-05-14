@@ -9,7 +9,7 @@ import com.rumi.common.constant.enums.CheckStatusEnum;
 import com.rumi.common.constant.enums.SaleStatusEnum;
 import com.rumi.common.entity.IdWorker;
 import com.rumi.dao.SpuMapper;
-import com.rumi.pojo.*;
+import com.rumi.goods.pojo.*;
 import com.rumi.service.IBrandService;
 import com.rumi.service.ICategoryService;
 import com.rumi.service.ISkuService;

@@ -3,7 +3,7 @@ package com.rumi.service;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.rumi.pojo.Sku;
+import com.rumi.goods.pojo.Sku;
 
 import java.util.List;
 
@@ -26,4 +26,9 @@ public interface ISkuService extends IService<Sku> {
      * 条件查询列表
      */
     List<Sku> findList(Sku sku);
+
+    /**
+     * 根据状态查询
+     */
+    List<Sku> findByStatus(String status);
 }

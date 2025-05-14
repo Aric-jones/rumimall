@@ -1,4 +1,4 @@
-package com.rumi.pojo;
+package com.rumi.goods.pojo;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -11,25 +11,30 @@ import lombok.experimental.Accessors;
 
 import java.io.Serializable;
 
-
-
-/****
- * @Author:admin
- * @Description:Brand构建
- * @Date 2019/6/14 19:13
- *****/
+/**
+ * @Author:CSH
+ * @Updator:CSH
+ * @Date 2025/5/4 16:00
+ * @Description:
+ */
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@TableName("tb_brand")
+@TableName("tb_spec")
 @AllArgsConstructor
 @NoArgsConstructor
-public class Brand implements Serializable {
+public class Spec implements Serializable {
+    //ID
     @TableId(type = IdType.ASSIGN_ID)
     private Integer id;
+    //名称
     private String name;
-    private String image;
-    private String letter;
+    //规格选项
+    private String options;
+    //排序
     private Integer seq;
+    //模板ID
+    private Integer templateId;
+
 
 }

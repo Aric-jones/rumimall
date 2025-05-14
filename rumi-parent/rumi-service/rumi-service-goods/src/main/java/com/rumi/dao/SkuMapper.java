@@ -2,7 +2,7 @@ package com.rumi.dao;
 
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.rumi.pojo.Sku;
+import com.rumi.goods.pojo.Sku;
 
 /**
  * @author CSH

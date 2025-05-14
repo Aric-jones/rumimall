@@ -1,5 +1,7 @@
-package com.rumi.pojo;
+package com.rumi.goods.pojo;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -8,7 +10,6 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
-import java.util.Date;
 
 /**
  * @Author:CSH
@@ -19,23 +20,14 @@ import java.util.Date;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@TableName("tb_stock_back")
+@TableName("tb_category_brand")
 @AllArgsConstructor
 @NoArgsConstructor
-public class StockBack implements Serializable {
+public class CategoryBrand implements Serializable {
 
-    //订单id
-    private String orderId;
-    //SKU的id
-    private String skuId;
-    //回滚数量
-    private Integer num;
-    //回滚状态
-    private String status;
-    //创建时间
-    private Date createTime;
-    //回滚时间
-    private Date backTime;
+    @TableId(type = IdType.ASSIGN_ID)
+    private Integer categoryId;
 
+    private Integer brandId;
 
 }

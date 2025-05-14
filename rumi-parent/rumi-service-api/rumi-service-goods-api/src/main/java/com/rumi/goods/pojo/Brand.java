@@ -1,4 +1,4 @@
-package com.rumi.pojo;
+package com.rumi.goods.pojo;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -11,25 +11,25 @@ import lombok.experimental.Accessors;
 
 import java.io.Serializable;
 
+
+
 /****
  * @Author:admin
- * @Description:Category构建
+ * @Description:Brand构建
  * @Date 2019/6/14 19:13
  *****/
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@TableName("tb_category")
+@TableName("tb_brand")
 @AllArgsConstructor
 @NoArgsConstructor
-public class Category implements Serializable {
+public class Brand implements Serializable {
     @TableId(type = IdType.ASSIGN_ID)
     private Integer id;
     private String name;
-    private Integer goodsNum;
-    private String isShow;
-    private String isMenu;
+    private String image;
+    private String letter;
     private Integer seq;
-    private Integer parentId;
-    private Integer templateId;
+
 }

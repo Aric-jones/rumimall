@@ -1,7 +1,5 @@
-package com.rumi.pojo;
+package com.rumi.goods.pojo;
 
-import com.baomidou.mybatisplus.annotation.TableName;
-import io.swagger.annotations.ApiModel;
 import lombok.*;
 import lombok.experimental.Accessors;
 

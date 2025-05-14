@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.rumi.dao.CategoryBrandMapper;
-import com.rumi.pojo.CategoryBrand;
+import com.rumi.goods.pojo.CategoryBrand;
 import com.rumi.service.ICategoryBrandService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

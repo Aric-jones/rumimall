@@ -4,7 +4,7 @@ package com.rumi.controller;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.rumi.common.entity.Result;
 import com.rumi.common.entity.StatusCode;
-import com.rumi.pojo.Sku;
+import com.rumi.goods.pojo.Sku;
 import com.rumi.service.ISkuService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -114,5 +114,14 @@ public class SkuController {
         sku.setStatus(status);
         skuService.updateById(sku);
         return new Result<>(true, StatusCode.OK, "状态更新成功");
+    }
+
+    /**
+     * 根据状态查询
+     */
+    @GetMapping("/status/{status}")
+    public Result<List<Sku>> findByStatus(@PathVariable(name = "status") String status) {
+        List<Sku> list = skuService.findPage(1, 2000).getRecords();
+        return new Result<>(true, StatusCode.OK, "查询成功", list);
     }
 }
