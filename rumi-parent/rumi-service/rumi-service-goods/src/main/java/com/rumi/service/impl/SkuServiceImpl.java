@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 @Service
@@ -47,6 +48,8 @@ public class SkuServiceImpl extends ServiceImpl<SkuMapper, Sku> implements ISkuS
                 .eq(Sku::getStatus, status);
         return this.list(wrapper);
     }
+
+
 
     /**
      * 构建查询条件

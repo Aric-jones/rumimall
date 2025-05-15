@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.rumi.goods.pojo.Sku;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author CSH
@@ -31,4 +32,6 @@ public interface ISkuService extends IService<Sku> {
      * 根据状态查询
      */
     List<Sku> findByStatus(String status);
+
+
 }

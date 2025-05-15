@@ -1,5 +1,7 @@
 package com.rumi.search.service;
 
+import java.util.Map;
+
 /**
  * @ClassName: SkuService
  * @Description:
@@ -12,4 +14,9 @@ public interface ISkuService {
      * 导出数据到ES
      */
     void importDate();
+
+    /**
+     * 搜索
+     */
+    Map<String, Object> search(Map<String, Object> searchMap);
 }

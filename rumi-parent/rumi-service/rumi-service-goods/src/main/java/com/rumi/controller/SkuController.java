@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author CSH
@@ -124,4 +125,6 @@ public class SkuController {
         List<Sku> list = skuService.findPage(1, 2000).getRecords();
         return new Result<>(true, StatusCode.OK, "查询成功", list);
     }
+
+
 }
