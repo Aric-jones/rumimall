@@ -14,6 +14,7 @@
         <module>rumi-service-goods-api</module>
         <module>rumi--service-content-api</module>
         <module>rumi-service-search-api</module>
+        <module>rumi-web-item-api</module>
     </modules>
     <dependencies>
         <!--通用的common-->

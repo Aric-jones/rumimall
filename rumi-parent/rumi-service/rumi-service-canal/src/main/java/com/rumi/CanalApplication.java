@@ -16,7 +16,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @SpringBootApplication(exclude={DataSourceAutoConfiguration.class})
 @EnableEurekaClient
 @EnableCanalClient
-@EnableFeignClients(basePackages = {"com.rumi.content.feign"})
+@EnableFeignClients(basePackages = {"com.rumi.content.feign","com.rumi.item.feign"})
 public class CanalApplication {
 
     public static void main(String[] args) {

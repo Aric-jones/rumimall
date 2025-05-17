@@ -9,4 +9,10 @@
     <artifactId>rumi-web</artifactId>
     <packaging>pom</packaging>
     <description>所有涉及到页面渲染的微服务</description>
+    <modules>
+        <module>rumi-web-search</module>
+        <module>rumi-web-item</module>
+    </modules>
+
+
 </project>

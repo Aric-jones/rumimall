@@ -10,16 +10,19 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="rumi-service-search" />
+        <module name="rumi-web-item" />
         <module name="rumi--service-content-api" />
         <module name="rumi-common" />
         <module name="rumi-service-file" />
         <module name="rumi-service-goods" />
+        <module name="rumi-service-search-api" />
+        <module name="rumi-web-item-api" />
+        <module name="rumi-service-goods-api" />
+        <module name="rumi-service-canal" />
+        <module name="rumi-service-search" />
         <module name="rumi-eureka" />
         <module name="rumi-service-content" />
-        <module name="rumi-service-search-api" />
-        <module name="rumi-service-canal" />
-        <module name="rumi-service-goods-api" />
+        <module name="rumi-web-search" />
         <module name="rumi-common-db" />
       </profile>
     </annotationProcessing>
@@ -49,6 +52,9 @@
       <module name="rumi-service-search" options="-parameters" />
       <module name="rumi-service-search-api" options="-parameters" />
       <module name="rumi-web" options="" />
+      <module name="rumi-web-item" options="-parameters" />
+      <module name="rumi-web-item-api" options="-parameters" />
+      <module name="rumi-web-search" options="-parameters" />
     </option>
   </component>
 </project>

@@ -4,9 +4,7 @@ package com.rumi.goods.feign;
 import com.rumi.common.entity.Result;
 import com.rumi.goods.pojo.Sku;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -16,7 +14,7 @@ import java.util.List;
  * @Date 2025/5/14 20:51
  * @Description:
  */
-@FeignClient(value = "goods")
+@FeignClient(value = "goods",contextId="goodsSku")
 @RequestMapping("/sku")
 public interface SkuFeign {
     /**
@@ -29,5 +27,17 @@ public interface SkuFeign {
      */
     @GetMapping("/status/{status}")
     Result<List<Sku>> findByStatus(@PathVariable(name = "status") String status);
+
+
+    /**
+     * @param sku
+     * @return com.rumi.common.entity.Result<java.util.List < com.rumi.goods.pojo.Sku>>
+     * @author:CSH
+     * @updator:CSH
+     * @date 2025/5/17 16:48
+     * @description: 根据条件搜索
+     */
+    @PostMapping(value = "/search" )
+    public Result<List<Sku>> findList(@RequestBody(required = false) Sku sku);
 
 }

@@ -134,10 +134,14 @@ public class SkuServiceImpl implements ISkuService {
         List<SkuInfo> content = page.getContent();
         int totalPages = page.getTotalPages();
         long totalElements = page.getTotalElements();
+        int number = page.getNumber()+1;
+        int size = page.getSize();
         Map<String, Object> resultMap = new HashMap<>();
         resultMap.put("rows", content);
         resultMap.put("total", totalElements);
         resultMap.put("totalPages", totalPages);
+        resultMap.put("pageNum", number);
+        resultMap.put("pageSize", size);
         return resultMap;
     }
 
@@ -192,16 +196,16 @@ public class SkuServiceImpl implements ISkuService {
           size(50): 聚合结果集的大小
          */
         if (Objects.isNull(searchMap) || Objects.isNull(searchMap.get("category"))) {
-            nativeSearchQueryBuilder.addAggregation(AggregationBuilders.terms("skuCategory").field("categoryName").size(2000));
+            nativeSearchQueryBuilder.addAggregation(AggregationBuilders.terms("skuCategory").field("categoryName").size(1000));
         }
         if (Objects.isNull(searchMap) || Objects.isNull(searchMap.get("brand"))) {
-            nativeSearchQueryBuilder.addAggregation(AggregationBuilders.terms("skuBrand").field("brandName").size(2000));
+            nativeSearchQueryBuilder.addAggregation(AggregationBuilders.terms("skuBrand").field("brandName").size(1000));
         }
-        nativeSearchQueryBuilder.addAggregation(AggregationBuilders.terms("skuSpec").field("spec.keyword").size(2000));
+        nativeSearchQueryBuilder.addAggregation(AggregationBuilders.terms("skuSpec").field("spec.keyword").size(1000));
 
         // 分页查询
         int pageNum = getPage(searchMap);
-        int size = 3;
+        int size = 10;
         nativeSearchQueryBuilder.withPageable(PageRequest.of(pageNum - 1, size));
         nativeSearchQueryBuilder.withQuery(boolQueryBuilder);
 

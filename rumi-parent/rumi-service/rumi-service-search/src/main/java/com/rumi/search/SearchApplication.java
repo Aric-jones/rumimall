@@ -6,7 +6,12 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.data.elasticsearch.repository.config.EnableElasticsearchRepositories;
-
+/**
+ * @author: CSH
+ * @updator: CSH
+ * @date 2025/5/17 17:59
+ * @description:
+ */
 @SpringBootApplication(exclude={DataSourceAutoConfiguration.class})
 @EnableEurekaClient
 @EnableFeignClients(basePackages = {"com.rumi.goods.feign"})
