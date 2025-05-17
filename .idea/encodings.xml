@@ -6,12 +6,14 @@
     <file url="file://$PROJECT_DIR$/rumi-parent/rumi-common-db/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/rumi-parent/rumi-common/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/rumi-parent/rumi-eureka/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/rumi-parent/rumi-gateway/rumi-gateway-web/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/rumi-parent/rumi-gateway/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/rumi-parent/rumi-gateway/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/rumi-parent/rumi-service-api/rumi--service-content-api/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/rumi-parent/rumi-service-api/rumi-service-goods-api/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/rumi-parent/rumi-service-api/rumi-service-goods-api/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/rumi-parent/rumi-service-api/rumi-service-search-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/rumi-parent/rumi-service-api/rumi-service-user-api/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/rumi-parent/rumi-service-api/rumi-web-item-api/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/rumi-parent/rumi-service-api/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/rumi-parent/rumi-service-api/src/main/resources" charset="UTF-8" />
@@ -24,6 +26,7 @@
     <file url="file://$PROJECT_DIR$/rumi-parent/rumi-service/rumi-service-goods/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/rumi-parent/rumi-service/rumi-service-goods/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/rumi-parent/rumi-service/rumi-service-search/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/rumi-parent/rumi-service/rumi-service-user/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/rumi-parent/rumi-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/rumi-parent/rumi-service/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/rumi-parent/rumi-web/rumi-web-item/src/main/java" charset="UTF-8" />

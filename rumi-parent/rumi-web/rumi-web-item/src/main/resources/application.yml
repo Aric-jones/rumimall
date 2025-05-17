@@ -21,4 +21,4 @@ spring:
   #  host: 192.168.200.99
 # 生成静态页的位置
 page:
-  path: D:\resource\javaProject\Backend\rumimall\rumi-parent\rumi-web\rumi-web-item\src\main\resources\templates\items
+  path: D:\resource\javaProject\Backend\rumimall\rumi-parent\rumi-web\rumi-web-item\src\main\resources\static\items

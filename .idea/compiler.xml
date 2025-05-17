@@ -10,7 +10,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="rumi-service-user" />
         <module name="rumi-web-item" />
+        <module name="rumi-gateway-web" />
         <module name="rumi--service-content-api" />
         <module name="rumi-common" />
         <module name="rumi-service-file" />
@@ -20,6 +22,7 @@
         <module name="rumi-service-goods-api" />
         <module name="rumi-service-canal" />
         <module name="rumi-service-search" />
+        <module name="rumi-service-user-api" />
         <module name="rumi-eureka" />
         <module name="rumi-service-content" />
         <module name="rumi-web-search" />
@@ -41,6 +44,7 @@
       <module name="rumi-common-db" options="-parameters" />
       <module name="rumi-eureka" options="-parameters" />
       <module name="rumi-gateway" options="" />
+      <module name="rumi-gateway-web" options="-parameters" />
       <module name="rumi-parent" options="" />
       <module name="rumi-service" options="" />
       <module name="rumi-service-api" options="" />
@@ -51,6 +55,8 @@
       <module name="rumi-service-goods-api" options="-parameters" />
       <module name="rumi-service-search" options="-parameters" />
       <module name="rumi-service-search-api" options="-parameters" />
+      <module name="rumi-service-user" options="-parameters" />
+      <module name="rumi-service-user-api" options="-parameters" />
       <module name="rumi-web" options="" />
       <module name="rumi-web-item" options="-parameters" />
       <module name="rumi-web-item-api" options="-parameters" />
