@@ -5,6 +5,8 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.rumi.user.pojo.Address;
 
+import java.util.List;
+
 /**
  * @Author:CSH
  * @Updator:CSH
@@ -14,5 +16,7 @@ import com.rumi.user.pojo.Address;
 public interface IAddressService extends IService<Address> {
     IPage<Address> findPage(Address address, int page, int size);
     IPage<Address> findPage(int page, int size);
+
+    List<Address> findList(Address address);
     // 其他方法由 MyBatis-Plus 的 IService 提供
 }

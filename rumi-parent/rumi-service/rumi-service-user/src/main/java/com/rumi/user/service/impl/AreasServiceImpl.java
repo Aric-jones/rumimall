@@ -10,6 +10,9 @@ import com.rumi.user.service.IAreasService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
+import java.util.List;
+
 @Service
 public class AreasServiceImpl extends ServiceImpl<AreasMapper, Areas> implements IAreasService {
 
@@ -40,5 +43,23 @@ public class AreasServiceImpl extends ServiceImpl<AreasMapper, Areas> implements
     public IPage<Areas> findPage(int page, int size) {
         IPage<Areas> iPage = new Page<>(page, size);
         return this.page(iPage);
+    }
+
+    @Override
+    public List<Areas> findList(Areas areas) {
+        QueryWrapper<Areas> queryWrapper = new QueryWrapper<>();
+
+        if (areas != null) {
+            if (areas.getAreaid() != null && !areas.getAreaid().isEmpty()) {
+                queryWrapper.eq("areaid", areas.getAreaid());
+            }
+            if (areas.getArea() != null && !areas.getArea().isEmpty()) {
+                queryWrapper.eq("area", areas.getArea());
+            }
+            if (areas.getCityid() != null && !areas.getCityid().isEmpty()) {
+                queryWrapper.eq("cityid", areas.getCityid());
+            }
+        }
+        return this.list(queryWrapper);
     }
 }
