@@ -165,7 +165,7 @@ public class UserController {
      * @param request 请求对象
      * @return 登录结果
      */
-    @PostMapping("/login")
+    @GetMapping("/login")
     public Result<String> login(String username, String password, HttpServletResponse response, HttpServletRequest request) {
         // 1.从数据库中查询用户名对应的用户的对象
         User user = userService.getById(username);
