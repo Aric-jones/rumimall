@@ -1,7 +1,5 @@
 package com.rumi.filter;
 
-import com.rumi.util.JwtUtil;
-import io.jsonwebtoken.Claims;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.core.Ordered;
@@ -25,6 +23,7 @@ import reactor.core.publisher.Mono;
 @Component
 public class AuthorizeFilter implements GlobalFilter, Ordered {
     private static final String AUTHORIZE_TOKEN = "Authorization";
+
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
 
@@ -34,7 +33,7 @@ public class AuthorizeFilter implements GlobalFilter, Ordered {
         ServerHttpResponse response = exchange.getResponse();
 
         //3.判断 是否为登录的URL 如果是 放行
-        if(request.getURI().getPath().startsWith("/api/user/login")){
+        if (request.getURI().getPath().startsWith("/api/user/login")) {
             return chain.filter(exchange);
         }
         //4.判断 是否为登录的URL 如果不是      权限校验
@@ -42,39 +41,40 @@ public class AuthorizeFilter implements GlobalFilter, Ordered {
 
         //4.1 从头header中获取令牌数据
         String token = request.getHeaders().getFirst(AUTHORIZE_TOKEN);
+        boolean hasToken = true;
 
-        if(StringUtils.isEmpty(token)){
+        if (StringUtils.isEmpty(token)) {
+            token = request.getQueryParams().getFirst(AUTHORIZE_TOKEN);
+            hasToken = false;
+        }
+
+        if (StringUtils.isEmpty(token)) {
             //4.2 从cookie中中获取令牌数据
             HttpCookie first = request.getCookies().getFirst(AUTHORIZE_TOKEN);
-            if(first!=null){
-                token=first.getValue();//就是令牌的数据
+            if (first != null) {
+                //就是令牌的数据
+                token = first.getValue();
             }
-        }
-
-        if(StringUtils.isEmpty(token)){
-            //4.3 从请求参数中获取令牌数据
-            token= request.getQueryParams().getFirst(AUTHORIZE_TOKEN);
-        }
-
-        if(StringUtils.isEmpty(token)){
-            //4.4. 如果没有数据 结束.
-            response.setStatusCode(HttpStatus.UNAUTHORIZED);
-            return response.setComplete();
         }
 
 
         //5 解析令牌数据 ( 判断解析是否正确,正确 就放行 ,否则 结束)
 
-        try {
-            Claims claims = JwtUtil.parseJWT(token);
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            //解析失败
+        if (StringUtils.isEmpty(token)) {
+            // 设置没有权限的状态码 401
             response.setStatusCode(HttpStatus.UNAUTHORIZED);
+            // 响应空数据
             return response.setComplete();
+        } else {
+            if (!hasToken) {
+                // 判断当前令牌是否有bearer前缀，如果没有，则添加前缀 bearer
+                if (!token.startsWith("bearer ") && !token.startsWith("Bearer ")) {
+                    token = "bearer " + token;
+                }
+                // 将令牌封装到头文件中
+                request.mutate().header(AUTHORIZE_TOKEN, token);
+            }
         }
-        request.mutate().header(AUTHORIZE_TOKEN, token);
         return chain.filter(exchange);
     }
 

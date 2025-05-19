@@ -22,6 +22,7 @@
         <module>rumi-common</module>
         <module>rumi-common-db</module>
         <module>rumi-gateway</module>
+        <module>rumi-user-oauth</module>
     </modules>
 
     <properties>

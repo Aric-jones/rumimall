@@ -9,6 +9,7 @@ import com.rumi.common.entity.StatusCode;
 import com.rumi.user.pojo.User;
 import com.rumi.user.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.Cookie;
@@ -151,11 +152,19 @@ public class UserController {
      * @Date 2025/5/17 22:38
      * @Description: 查询User全部信息
      */
+    @PreAuthorize(value="hasAuthority('admin')")
     @GetMapping
     public Result<List<User>> findAll() {
         List<User> list = userService.list();
         return new Result<List<User>>(true, StatusCode.OK, "查询成功", list);
     }
+    @GetMapping("/load/{id}")
+    public Result<User> findByUsername(@PathVariable(name="id") String id) {
+        //调用UserService实现根据主键查询User
+        User user = userService.getById(id);
+        return new Result<User>(true, StatusCode.OK, "查询成功", user);
+    }
+
 
     /**
      * 用户登录

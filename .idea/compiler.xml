@@ -21,6 +21,7 @@
         <module name="rumi-web-item-api" />
         <module name="rumi-service-goods-api" />
         <module name="rumi-service-canal" />
+        <module name="rumi-user-oauth" />
         <module name="rumi-service-search" />
         <module name="rumi-service-user-api" />
         <module name="rumi-eureka" />
@@ -57,6 +58,7 @@
       <module name="rumi-service-search-api" options="-parameters" />
       <module name="rumi-service-user" options="-parameters" />
       <module name="rumi-service-user-api" options="-parameters" />
+      <module name="rumi-user-oauth" options="-parameters" />
       <module name="rumi-web" options="" />
       <module name="rumi-web-item" options="-parameters" />
       <module name="rumi-web-item-api" options="-parameters" />
